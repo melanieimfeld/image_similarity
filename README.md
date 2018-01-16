@@ -8,10 +8,14 @@ The color histogram quantifies the number of pixels for each intensity from 0 to
 
 ### b) Pixel to pixel comparison with Euclidean distance
 Prior to comparing the images pixel by pixel, all images are downsized by a factor of 40. The RGB-colors are extracted from each pixel from each image and stored in an array. The function euclideanArray() then measures the Euclidean distance 𝑑 between the vector of the target image 𝑝 with the vector 𝑝 of each test image at position 𝑗. In order to compare the images, the sum of all vector distances is taken. An image with a sum of zero for the distances between the target vectors 𝑝 and a test vectors 𝑝 is a perfect match:
+<br />
 𝑑 = 0
+<br />
 In addition, a variance comparison is used to test the distribution similarity. Ranking images by variance prioritizes images where the spread of the compared distances between target and test image is similar, regardless of the actual color distance. This could be useful if images have the same or similar content but a filter masks one of them.
 
 ### c) Cosine distance
 The Cosine distance method is tested together with the customresize() function that scales the images by a factor of 40. Again, the RGB values from the target and test images are extracted and stored in arrays. The function cosineArray() measures the Cosine distance between the vector of the target image 𝑝 with the vector 𝑝 of each test image at position 𝑗. The highest similarity score is established by:
+<br />
 cos 0𝜋 = 1
+<br />
 A distance of 1 for two compared vectors indicates that they match perfectly, i.e. the angle between them is zero. Hence, the same principle can be applied to the sums of all cosine distances. If the images match perfectly, the sum of all distances will be equal to the number of pixels of the target-image.
