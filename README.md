@@ -13,7 +13,7 @@ Prior to comparing the images pixel by pixel, all images are downsized by a fact
 <br />
 In addition, a variance comparison is used to test the distribution similarity. Ranking images by variance prioritizes images where the spread of the compared distances between target and test image is similar, regardless of the actual color distance. This could be useful if images have the same or similar content but a filter masks one of them.
 
-### c) Cosine distance
+### c) Pixel to pixel comparison with Cosine distance
 The Cosine distance method is tested together with the customresize() function that scales the images by a factor of 40. Again, the RGB values from the target and test images are extracted and stored in arrays. The function cosineArray() measures the Cosine distance between the vector of the target image 𝑝 with the vector 𝑝 of each test image at position 𝑗. The highest similarity score is established by:
 <br />
 cos 0𝜋 = 1
